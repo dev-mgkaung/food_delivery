@@ -1,11 +1,12 @@
-package com.example.fooddeliveryapp
+package com.example.fooddeliveryapp.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.fooddeliveryapp.R
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_register)
     }
 }
