@@ -4,6 +4,13 @@
     <string name="first_fragment_label">Restaurant</string>
     <string name="second_fragment_label">Offers</string>
     <string name="third_fragment_label">Accounts</string>
-
-
+    <string name="intro_page_title">Happy Meals</string>
+    <string name="intro_page_description">Discover the best foods from over 1000 restaurants</string>
+    <string name="intro_btn_get_started">Get Started</string>
+    <string name="login_title">Log in to your account</string>
+    <string name="email"> Email </string>
+    <string name="password"> Password </string>
+    <string name="forgot"> Forgot? </string>
+    <string name="login"> Login </string>
+    <string name="account"> Dont have an account ? Sign Up </string>
 </resources>

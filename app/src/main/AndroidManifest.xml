@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoodDelivery">
+        android:theme="@style/Theme.FoodDelivery.NoActionBar">
         <activity android:name=".activity.ProfileActivity"></activity>
         <activity android:name=".activity.CheckOutActivity" />
         <activity android:name=".activity.DeatilActivity" />
