@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.fooddeliveryapp"
-        minSdkVersion 16
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -61,9 +61,9 @@ dependencies {
 
     //Glide
     implementation rootProject.ext.libraries.glide
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.annotation:annotation:1.1.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'androidx.annotation:annotation:1.1.0'
+//    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     annotationProcessor rootProject.ext.libraries.glideAnnotion
 
     //GSON
