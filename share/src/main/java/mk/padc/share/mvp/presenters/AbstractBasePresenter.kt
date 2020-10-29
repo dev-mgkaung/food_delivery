@@ -3,7 +3,8 @@ import androidx.lifecycle.ViewModel
 import mk.padc.share.mvp.views.BaseView
 
 abstract class AbstractBasePresenter<T : BaseView> : BasePresenter<T>, ViewModel() {
-    var mView: T? = null
+
+    protected lateinit var mView : T
 
     override fun initPresenter(view: T) {
         mView = view

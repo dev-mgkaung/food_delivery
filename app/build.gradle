@@ -61,9 +61,6 @@ dependencies {
 
     //Glide
     implementation rootProject.ext.libraries.glide
-//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-//    implementation 'androidx.annotation:annotation:1.1.0'
-//    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     annotationProcessor rootProject.ext.libraries.glideAnnotion
 
     //GSON
@@ -88,7 +85,9 @@ dependencies {
     implementation rootProject.ext.libraries.lifecycle_arch_extension
     kapt rootProject.ext.libraries.lifecycle_compiler
     implementation rootProject.ext.libraries.lifecycle_extensions
-
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     // Room Database
     implementation rootProject.ext.libraries.room
     kapt rootProject.ext.libraries.roomcompiler

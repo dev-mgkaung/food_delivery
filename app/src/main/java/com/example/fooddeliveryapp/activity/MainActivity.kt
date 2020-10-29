@@ -3,10 +3,10 @@ package com.example.fooddeliveryapp.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import com.example.fooddeliveryapp.R
+import mk.padc.share.activities.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity()  {
 
     companion object {
         fun newIntent(context: Context) : Intent {

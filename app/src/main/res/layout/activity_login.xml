@@ -45,6 +45,7 @@
             android:padding="6dp"
             android:layout_margin="10dp"
             android:textColor="@color/white"
+            android:id="@+id/btnLogin"
             android:background="@drawable/rounded_corner_btn_red"
             android:text="@string/login"
             android:layout_height="wrap_content"/>
@@ -73,7 +74,7 @@
         android:textAlignment="center"
         android:text="@string/signup"
         android:textSize="18sp"
-        android:id="@+id/signup"
+        android:id="@+id/btnRegister"
         android:textColor="@color/red_500" />
 </LinearLayout>
 

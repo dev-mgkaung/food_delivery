@@ -1,3 +1,5 @@
 package mk.padc.share.mvp.views
 
-interface BaseView {}
+interface BaseView {
+    fun showError(error : String)
+}
