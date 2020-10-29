@@ -11,9 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery.NoActionBar">
-        <activity android:name=".activity.ProfileActivity"></activity>
         <activity android:name=".activity.CheckOutActivity" />
-        <activity android:name=".activity.DeatilActivity" />
+        <activity android:name=".activity.DetailActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity

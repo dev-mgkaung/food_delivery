@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_restaurant"
+        android:icon="@drawable/ic_baseline_restaurant_24"
+        android:title="Restaurant" />
+
+    <item
+        android:id="@+id/navigation_offers"
+        android:icon="@drawable/ic_baseline_local_offer_24"
+        android:title="Offers" />
+
+    <item
+        android:id="@+id/navigation_account"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="Account" />
+
+
+</menu>

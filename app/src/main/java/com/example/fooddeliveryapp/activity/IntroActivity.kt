@@ -18,21 +18,17 @@ class IntroActivity : BaseActivity() , IntroView {
         setUpPresenter()
         setUpActionListeners()
     }
-
     private fun setUpActionListeners() {
         btn_get_started.setOnClickListener{
             mPresenter.onTapGettingStarted()
             this.finish()
         }
     }
-
     private fun setUpPresenter() {
         mPresenter = getPresenter<IntroPresenterImpl, IntroView>()
         mPresenter.onUiReady(this)
     }
-
     override fun navigateToLoginScreen() {
         startActivity(LoginActivity.newIntent(this))
     }
-
 }

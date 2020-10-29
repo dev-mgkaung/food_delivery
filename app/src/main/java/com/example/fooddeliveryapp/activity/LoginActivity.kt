@@ -12,7 +12,6 @@ import mk.padc.share.activities.BaseActivity
 
 class LoginActivity : BaseActivity() , LoginView {
 
-
     private lateinit var mPresenter: LoginPresenter
 
     companion object {
@@ -27,7 +26,6 @@ class LoginActivity : BaseActivity() , LoginView {
         setUpPresenter()
         setUpActionListeners()
     }
-
 
     private fun setUpActionListeners() {
         btnLogin.setOnClickListener {
