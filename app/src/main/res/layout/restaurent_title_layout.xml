@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="40dp">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:textSize="19sp"
+    android:textStyle="bold"
+    android:gravity="center"
+    android:textColor="@color/red_500"
+    android:text="New Restaurants"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:textColor="@color/grey_400"
+        android:text="Show All"/>
+
+</RelativeLayout>

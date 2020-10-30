@@ -15,17 +15,15 @@ class ProfilePresenterImpl : ProfilePresenter, AbstractBasePresenter<ProfileView
     private  val foodDeliveryModel : FoodDeliveryModel = FoodDeliveryModelImpl
 
     override fun updateUserProfile(bitmap: Bitmap) {
-        foodDeliveryModel.uploadProfileImage(bitmap,
+        foodDeliveryModel.uploadPhotoToFirebaseStorage(bitmap,
         onSuccess = {
             mView?.onTapSaveUserData()
             mAuthenticationModel.updateProfile(it,onSuccess = {}, onFailure = {})
         },
         onFailure = {
             mView?.showError("Profile Updat Failed")
-            mView?.onTapSaveUserData()
         })
 
-      //  mView?.onTapSaveUserData()
     }
 
     override fun onTapCancelUserData() {

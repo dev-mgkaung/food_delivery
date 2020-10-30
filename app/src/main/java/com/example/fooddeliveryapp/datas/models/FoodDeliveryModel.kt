@@ -1,6 +1,8 @@
 package com.example.fooddeliveryapp.datas.models
 
 import android.graphics.Bitmap
+import com.example.fooddeliveryapp.datas.vos.CategoryVO
+import com.example.fooddeliveryapp.datas.vos.RestaurantVO
 import com.example.fooddeliveryapp.network.FirebaseApi
 import com.example.fooddeliveryapp.network.remoteconfig.FirebaseRemoteConfigManager
 
@@ -16,6 +18,10 @@ interface FoodDeliveryModel {
 
     fun getHomeScreenTypeStatusFromRemoteConfig() : Int
 
-    fun uploadProfileImage( image : Bitmap , onSuccess: (photoUrl : String) -> Unit, onFailure: (String) -> Unit)
+    fun uploadPhotoToFirebaseStorage( image : Bitmap , onSuccess: (photoUrl : String) -> Unit, onFailure: (String) -> Unit)
+
+    fun getCategories(onSuccess: (List<CategoryVO>) -> Unit, onFaiure: (String) -> Unit)
+
+    fun getRestaurants(onSuccess: (List<RestaurantVO>) -> Unit, onFaiure: (String) -> Unit)
 
 }

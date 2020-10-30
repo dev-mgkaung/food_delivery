@@ -19,4 +19,12 @@ class ImageUtils{
             .apply(RequestOptions().circleCrop())
             .into(imageView)
     }
+
+    fun showImageWithoutCrop( imageView: ImageView, imageUrl: String)
+    {
+        Glide.with(imageView.context)
+                .load( imageUrl)
+                .placeholder(R.drawable.thumbnail)
+                .into(imageView)
+    }
 }
