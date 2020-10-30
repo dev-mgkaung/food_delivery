@@ -27,4 +27,5 @@ interface FoodDeliveryModel {
 
     fun getFoodItems(documentId: String, onSuccess: (List<FoodItemVO>,RestaurantVO) -> Unit, onFaiure: (String) -> Unit)
 
+    fun getPopularChoiceList(onSuccess: (List<FoodItemVO>) -> Unit, onFaiure: (String) -> Unit)
 }

@@ -34,7 +34,14 @@ class MainPresenterImpl : MainPresenter, AbstractBasePresenter<MainView>() {
                     //       mView.showErrorMessage(it)
                 })
 
-       // mView?.showPopularChoicesFoodItems()
+        foodDeliveryModel.getPopularChoiceList(
+            onSuccess = {
+                mView.showPopularChoicesFoodItems(it)
+            },
+            onFaiure = {
+                //       mView.showErrorMessage(it)
+            })
+
     }
 
     override fun onTap() {

@@ -141,4 +141,31 @@ object CloudFirestoreFirebaseApiImpl : FirebaseApi {
             }
     }
 
+    override fun getPopularChoiceList(
+        onSuccess: (restaurants: List<FoodItemVO>) -> Unit,
+        onFialure: (String) -> Unit
+    ) {
+        db.collectionGroup("fooditems").whereEqualTo("popular","1")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                    val popularList: MutableList<FoodItemVO> = arrayListOf()
+
+                    val result = value?.documents ?: arrayListOf()
+
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
+                        popularList.add(docsData)
+                    }
+
+                    onSuccess(popularList)
+                }
+            }
+    }
+
 }

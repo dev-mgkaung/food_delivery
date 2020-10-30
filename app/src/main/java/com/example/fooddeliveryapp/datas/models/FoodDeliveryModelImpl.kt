@@ -50,4 +50,11 @@ object FoodDeliveryModelImpl : FoodDeliveryModel {
         mFirebaseApi.getFoodItems(documentId,onSuccess, onFaiure)
     }
 
+    override fun getPopularChoiceList(
+        onSuccess: (List<FoodItemVO>) -> Unit,
+        onFaiure: (String) -> Unit
+    ) {
+        mFirebaseApi.getPopularChoiceList(onSuccess, onFaiure)
+    }
+
 }

@@ -11,4 +11,6 @@ interface FirebaseApi {
     fun getCategories(onSuccess: (categories: List<CategoryVO>) -> Unit, onFialure: (String) -> Unit)
     fun getRestaurants(onSuccess: (restaurants: List<RestaurantVO>) -> Unit, onFialure: (String) -> Unit)
     fun getFoodItems( documentId: String, onSuccess: (foodList: List<FoodItemVO>, restaurantVO : RestaurantVO) -> Unit, onFialure: (String) -> Unit)
+    fun getPopularChoiceList(onSuccess: (restaurants: List<FoodItemVO>) -> Unit, onFialure: (String) -> Unit)
+
 }
