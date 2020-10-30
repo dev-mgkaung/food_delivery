@@ -57,4 +57,18 @@ object FoodDeliveryModelImpl : FoodDeliveryModel {
         mFirebaseApi.getPopularChoiceList(onSuccess, onFaiure)
     }
 
+    override fun getOrderList(onSuccess: (List<FoodItemVO>) -> Unit, onFaiure: (String) -> Unit) {
+        mFirebaseApi.getOrderList(onSuccess, onFaiure)
+    }
+
+
+    override fun addOrUpdateFoodItem(foodItemVO: FoodItemVO) {
+        mFirebaseApi.addOrUpdateFoodItem(foodItemVO)
+    }
+
+    override fun removeFoodItem(id: String) {
+        mFirebaseApi.deleteFoodItem(id)
+    }
+
+
 }

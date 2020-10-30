@@ -1,9 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.CheckOutActivity">
+    <LinearLayout
+        android:id="@+id/ll_backpress"
+        android:layout_margin="5dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:text="My Order"
+            android:textSize="20sp"
+            android:textColor="@color/red_500"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_marginBottom="60dp"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <include layout="@layout/view_holder_restaurant_vertical_viewtype"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="19sp"
+                    android:text="Order List"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:id="@+id/rc_orderList"/>
+                <RelativeLayout
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/red_500"
+                        android:text="Sub Total"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:id="@+id/tv_totalamount"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:textColor="@color/grey_400"
+                        android:text="10000 $"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="19sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/red_500"
+                        android:text="Delivery Cost"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:textColor="@color/grey_400"
+                        android:text="Free"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_corner_btn_red"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/btn_checkout"
+            android:layout_gravity="bottom|end"
+            android:text="Check Out"/>
+    </RelativeLayout>
+
+</LinearLayout>

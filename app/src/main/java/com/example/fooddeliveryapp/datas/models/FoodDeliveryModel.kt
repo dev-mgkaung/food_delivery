@@ -28,4 +28,10 @@ interface FoodDeliveryModel {
     fun getFoodItems(documentId: String, onSuccess: (List<FoodItemVO>,RestaurantVO) -> Unit, onFaiure: (String) -> Unit)
 
     fun getPopularChoiceList(onSuccess: (List<FoodItemVO>) -> Unit, onFaiure: (String) -> Unit)
+
+    fun getOrderList(onSuccess: (List<FoodItemVO>) -> Unit, onFaiure: (String) -> Unit)
+
+    fun addOrUpdateFoodItem(foodItemVO: FoodItemVO)
+
+    fun removeFoodItem(id: String)
 }

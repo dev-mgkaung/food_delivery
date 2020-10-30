@@ -168,4 +168,48 @@ object CloudFirestoreFirebaseApiImpl : FirebaseApi {
             }
     }
 
+    override fun getOrderList(onSuccess: (restaurants: List<FoodItemVO>) -> Unit, onFialure: (String) -> Unit) {
+        db.collection("orders")
+                .addSnapshotListener { value, error ->
+                    error?.let {
+                        onFialure(it.message ?: "Please check connection")
+                    } ?: run{
+
+                        val popularList: MutableList<FoodItemVO> = arrayListOf()
+
+                        val result = value?.documents ?: arrayListOf()
+
+                        for (document in result) {
+                            val hashmap = document.data
+                            hashmap?.put("id", document.id.toString())
+                            val Data = Gson().toJson(hashmap)
+                            val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
+                            popularList.add(docsData)
+                        }
+
+                        onSuccess(popularList)
+                    }
+                }
+    }
+
+    override fun addOrUpdateFoodItem(foodItemVO: FoodItemVO) {
+
+        db.collection("orders")
+                .document(foodItemVO?.food_name.toString())
+                .set(foodItemVO)
+                .addOnSuccessListener { Log.d("Success", "Successfully added grocery") }
+                .addOnFailureListener { Log.d("Failure", "Failed to add grocery") }
+
+    }
+
+    override fun deleteFoodItem(id: String) {
+
+        db.collection("orders")
+                .document(id)
+                .delete()
+                .addOnSuccessListener { Log.d("Success", "Successfully deleted grocery") }
+                .addOnFailureListener { Log.d("Failure", "Failed to delete grocery") }
+
+    }
+
 }

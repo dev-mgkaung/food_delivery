@@ -3,6 +3,7 @@ package com.example.fooddeliveryapp.mvp.presenters.impls
 import androidx.lifecycle.LifecycleOwner
 import com.example.fooddeliveryapp.datas.models.FoodDeliveryModel
 import com.example.fooddeliveryapp.datas.models.FoodDeliveryModelImpl
+import com.example.fooddeliveryapp.datas.vos.FoodItemVO
 import com.example.fooddeliveryapp.mvp.presenters.DetailPresenter
 import com.example.fooddeliveryapp.mvp.views.DetailView
 import mk.padc.share.mvp.presenters.AbstractBasePresenter
@@ -12,6 +13,9 @@ class DetailPresenterImpl : DetailPresenter, AbstractBasePresenter<DetailView>()
     private val foodDeliveryModel : FoodDeliveryModel = FoodDeliveryModelImpl
 
     override fun onUiReady(owner: LifecycleOwner) {}
+    override fun onTapAddToCartAction(data: FoodItemVO) {
+
+    }
 
     override fun onfetchReastaurantData(owner: LifecycleOwner, documentId: String) {
 
@@ -31,8 +35,6 @@ class DetailPresenterImpl : DetailPresenter, AbstractBasePresenter<DetailView>()
                        mView?.showError(it)
             })
     }
-
-    override fun onTapDelegateAction() {}
 
     override fun onTapPopularChoiceDelegateAction() {}
 }

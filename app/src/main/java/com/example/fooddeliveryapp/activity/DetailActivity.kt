@@ -3,23 +3,16 @@ package com.example.fooddeliveryapp.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddeliveryapp.R
 import com.example.fooddeliveryapp.adapters.*
-import com.example.fooddeliveryapp.datas.vos.CategoryVO
 import com.example.fooddeliveryapp.datas.vos.FoodItemVO
 import com.example.fooddeliveryapp.datas.vos.RestaurantVO
 import com.example.fooddeliveryapp.mvp.presenters.DetailPresenter
-import com.example.fooddeliveryapp.mvp.presenters.IntroPresenter
 import com.example.fooddeliveryapp.mvp.presenters.impls.DetailPresenterImpl
-import com.example.fooddeliveryapp.mvp.presenters.impls.MainPresenterImpl
 import com.example.fooddeliveryapp.mvp.views.DetailView
-import com.example.fooddeliveryapp.mvp.views.MainView
 import kotlinx.android.synthetic.main.activity_deatil.*
 import kotlinx.android.synthetic.main.content_scrolling.*
-import kotlinx.android.synthetic.main.fragment_restaurant.*
-import kotlinx.android.synthetic.main.view_holder_restaurant_vertical_viewtype.view.*
 import mk.padc.share.activities.BaseActivity
 import mk.padc.share.utils.ImageUtils
 
@@ -28,7 +21,7 @@ class DetailActivity : BaseActivity() , DetailView {
     private lateinit var mPresenter: DetailPresenter
     private lateinit var mDetailAdapter: DetailAdapter
     private lateinit var mPopularChoiceDetailAdapter: PopularChoiceDetailAdapter
-
+    private lateinit var mRestaurantVO: RestaurantVO
     companion object {
         const val PARM_DOCUMENTID = "Document ID"
         fun newIntent(context: Context,
@@ -44,6 +37,17 @@ class DetailActivity : BaseActivity() , DetailView {
         setContentView(R.layout.activity_deatil)
         setUpPresenter()
         setUpRecyclerView()
+        setUpActionListener()
+    }
+    private fun setUpActionListener()
+    {
+
+        btn_viewcart.setOnClickListener {
+            mRestaurantVO?.let {
+                startActivity(CheckOutActivity.newIntent(this,it?.name,it?.description,it?.image_url,it?.rating))
+            }
+
+        }
     }
     private fun setUpRecyclerView() {
 
@@ -67,6 +71,7 @@ class DetailActivity : BaseActivity() , DetailView {
 
 
     override fun showRestaurantData(restaurantVO: RestaurantVO) {
+        mRestaurantVO =restaurantVO
         detail_description.text =restaurantVO?.description
          tv_detail_rating.text =restaurantVO?.rating
         tv_detail_title.text =restaurantVO?.name

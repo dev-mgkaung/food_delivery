@@ -12,5 +12,7 @@ interface FirebaseApi {
     fun getRestaurants(onSuccess: (restaurants: List<RestaurantVO>) -> Unit, onFialure: (String) -> Unit)
     fun getFoodItems( documentId: String, onSuccess: (foodList: List<FoodItemVO>, restaurantVO : RestaurantVO) -> Unit, onFialure: (String) -> Unit)
     fun getPopularChoiceList(onSuccess: (restaurants: List<FoodItemVO>) -> Unit, onFialure: (String) -> Unit)
-
+    fun getOrderList(onSuccess: (restaurants: List<FoodItemVO>) -> Unit, onFialure: (String) -> Unit)
+    fun addOrUpdateFoodItem(foodItemVO: FoodItemVO)
+    fun deleteFoodItem(id: String)
 }

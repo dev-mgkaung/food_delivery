@@ -69,5 +69,15 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_scrolling" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_corner_btn_red"
+        android:layout_margin="10dp"
+        android:id="@+id/btn_viewcart"
+        android:layout_gravity="bottom|end"
+        android:text="View Cart"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
