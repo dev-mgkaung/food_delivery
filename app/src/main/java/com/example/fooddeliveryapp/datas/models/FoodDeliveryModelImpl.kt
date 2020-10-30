@@ -2,6 +2,7 @@ package com.example.fooddeliveryapp.datas.models
 
 import android.graphics.Bitmap
 import com.example.fooddeliveryapp.datas.vos.CategoryVO
+import com.example.fooddeliveryapp.datas.vos.FoodItemVO
 import com.example.fooddeliveryapp.datas.vos.RestaurantVO
 import com.example.fooddeliveryapp.network.FirebaseApi
 import com.example.fooddeliveryapp.network.impls.CloudFirestoreFirebaseApiImpl
@@ -37,6 +38,16 @@ object FoodDeliveryModelImpl : FoodDeliveryModel {
 
     override fun getRestaurants(onSuccess: (List<RestaurantVO>) -> Unit, onFaiure: (String) -> Unit) {
         mFirebaseApi.getRestaurants(onSuccess, onFaiure)
+    }
+
+
+
+    override fun getFoodItems(
+        documentId: String,
+        onSuccess: (List<FoodItemVO>,RestaurantVO) -> Unit,
+        onFaiure: (String) -> Unit
+    ) {
+        mFirebaseApi.getFoodItems(documentId,onSuccess, onFaiure)
     }
 
 }

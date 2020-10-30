@@ -25,7 +25,7 @@ class RestaurantViewHolder(itemView: View, private val mDelegate: RestaurantView
             }
         }
         itemView.ll_restaurant.setOnClickListener {
-            mDelegate.onTapRestaurentListItem()
+            data?.id.let{mDelegate.onTapRestaurentListItem(it.toString())}
         }
 
     }

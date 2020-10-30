@@ -1,5 +1,6 @@
 package com.example.fooddeliveryapp.fragments
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -106,8 +107,8 @@ import mk.padc.share.activities.BaseFragment
 
     }
 
-    override fun navigateToDetailScreen() {
-   //     startActivity(DetailActivity.newIntent(activity))
+    override fun navigateToDetailScreen(documentId: String) {
+      startActivity(  activity?.applicationContext?.let{DetailActivity.newIntent(it, documentId)})
     }
 
     override fun showErrorMessage(message: String) {

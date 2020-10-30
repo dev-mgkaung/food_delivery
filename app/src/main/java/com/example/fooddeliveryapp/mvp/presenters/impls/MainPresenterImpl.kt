@@ -11,8 +11,8 @@ class MainPresenterImpl : MainPresenter, AbstractBasePresenter<MainView>() {
 
     private val foodDeliveryModel : FoodDeliveryModel = FoodDeliveryModelImpl
 
-    override fun onNavigateDetailScreen() {
-      mView?.navigateToDetailScreen()
+    override fun onNavigateDetailScreen(documentId : String) {
+      mView?.navigateToDetailScreen(documentId)
     }
 
     override fun onUiReady(owner: LifecycleOwner) {
@@ -41,8 +41,8 @@ class MainPresenterImpl : MainPresenter, AbstractBasePresenter<MainView>() {
 
     }
 
-    override fun onTapRestaurentListItem() {
-        mView.navigateToDetailScreen()
+    override fun onTapRestaurentListItem(documentId: String) {
+        mView.navigateToDetailScreen(documentId)
     }
 
     override fun onTapPopularChoiceListItem() {

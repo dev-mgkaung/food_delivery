@@ -8,7 +8,7 @@ import mk.padc.share.mvp.views.BaseView
 
 interface MainView : BaseView {
     fun changeHomeScreenViewType( viewType : Int)
-    fun navigateToDetailScreen()
+    fun navigateToDetailScreen(documentId: String)
     fun showErrorMessage(message: String)
     fun showCategories(categoryList: List<CategoryVO>)
     fun showRestaurants(restaurantList: List<RestaurantVO>)

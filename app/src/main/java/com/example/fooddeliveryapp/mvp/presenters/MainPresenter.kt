@@ -9,5 +9,5 @@ import mk.padc.share.mvp.presenters.BasePresenter
 
 interface MainPresenter : BasePresenter<MainView> , CategoryViewItemActionDelegate, RestaurantViewItemActionDelegate,
   PopularViewItemActionDelegate {
-  fun onNavigateDetailScreen()
+  fun onNavigateDetailScreen(documentId: String)
 }

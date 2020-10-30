@@ -4,6 +4,7 @@ import android.content.ContentValues.TAG
 import android.graphics.Bitmap
 import android.util.Log
 import com.example.fooddeliveryapp.datas.vos.CategoryVO
+import com.example.fooddeliveryapp.datas.vos.FoodItemVO
 import com.example.fooddeliveryapp.datas.vos.RestaurantVO
 import com.example.fooddeliveryapp.datas.vos.UserVO
 import com.example.fooddeliveryapp.network.FirebaseApi
@@ -92,6 +93,52 @@ object CloudFirestoreFirebaseApiImpl : FirebaseApi {
                         onSuccess(restaurantList)
                     }
                 }
+    }
+
+
+    override fun getFoodItems(
+        documentId: String,
+        onSuccess: (foodList: List<FoodItemVO>, restaurantVO : RestaurantVO) -> Unit,
+        onFialure: (String) -> Unit
+    ) {
+        var restaurant: RestaurantVO  = RestaurantVO()
+        db.collection("restaurants").document(documentId)
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                        val data = value?.data
+                        val restaurantVO = RestaurantVO()
+                        restaurantVO.name = data?.get("name") as String
+                        restaurantVO.description = data["description"] as String?
+                        restaurantVO.image_url = data["image_url"] as String?
+                        restaurantVO.rating = data["rating"] as String?
+
+                    restaurant = restaurantVO
+                }
+            }
+
+        db.collection("restaurants/${documentId}/fooditems")
+            .addSnapshotListener { value, error ->
+                error?.let {
+                    onFialure(it.message ?: "Please check connection")
+                } ?: run{
+
+                    val foodList: MutableList<FoodItemVO> = arrayListOf()
+
+                    val result = value?.documents ?: arrayListOf()
+
+                    for (document in result) {
+                        val hashmap = document.data
+                        hashmap?.put("id", document.id.toString())
+                        val Data = Gson().toJson(hashmap)
+                        val docsData = Gson().fromJson<FoodItemVO>(Data, FoodItemVO::class.java)
+                        foodList.add(docsData)
+                    }
+                    onSuccess(foodList ,restaurant)
+                }
+            }
     }
 
 }

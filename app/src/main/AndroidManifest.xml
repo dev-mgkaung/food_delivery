@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery.NoActionBar">
         <activity android:name=".activity.CheckOutActivity" />
-        <activity android:name=".activity.DetailActivity" />
+        <activity android:name=".activity.DetailActivity" android:parentActivityName=".activity.MainActivity" />
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity
