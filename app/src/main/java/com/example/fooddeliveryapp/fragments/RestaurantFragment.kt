@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddeliveryapp.R
 import com.example.fooddeliveryapp.activity.DetailActivity
 import com.example.fooddeliveryapp.adapters.CategoryAdapter
+import com.example.fooddeliveryapp.adapters.PopularChoiceAdapter
 import com.example.fooddeliveryapp.adapters.RestaurantAdapter
 import com.example.fooddeliveryapp.datas.vos.CategoryVO
+import com.example.fooddeliveryapp.datas.vos.FoodItemVO
 import com.example.fooddeliveryapp.datas.vos.RestaurantVO
 import com.example.fooddeliveryapp.mvp.presenters.MainPresenter
 import com.example.fooddeliveryapp.mvp.presenters.impls.MainPresenterImpl
@@ -23,6 +25,7 @@ import mk.padc.share.activities.BaseFragment
 
     private lateinit var mCategoryAdapter: CategoryAdapter
     private lateinit var mRestaurantAdapter: RestaurantAdapter
+    private lateinit var mPopularChoiceAdapter: PopularChoiceAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,10 +47,14 @@ import mk.padc.share.activities.BaseFragment
     private fun setUpRecyclerView() {
 
         rc_category.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
+        rc_popular_choice.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
         rc_restaurants.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
 
         mCategoryAdapter = CategoryAdapter (mPresenter)
         rc_category.adapter = mCategoryAdapter
+
+        mPopularChoiceAdapter = PopularChoiceAdapter (mPresenter)
+        rc_popular_choice.adapter = mPopularChoiceAdapter
 
     }
 
@@ -83,16 +90,17 @@ import mk.padc.share.activities.BaseFragment
         location_layout.visibility =View.VISIBLE
         rc_category.visibility = View.VISIBLE
         ly_restaurant.visibility= View.GONE
+        ly_popular.visibility =View.GONE
         mRestaurantAdapter = RestaurantAdapter (mPresenter,0)
         rc_restaurants.adapter = mRestaurantAdapter
 
     }
     private fun viewTypeTwo()
     {
-
         location_layout.visibility =View.GONE
         rc_category.visibility = View.GONE
         ly_restaurant.visibility= View.VISIBLE
+        ly_popular.visibility =View.VISIBLE
         mRestaurantAdapter = RestaurantAdapter (mPresenter,1)
         rc_restaurants.adapter = mRestaurantAdapter
 
@@ -112,6 +120,10 @@ import mk.padc.share.activities.BaseFragment
 
      override fun showRestaurants(restaurantList: List<RestaurantVO>) {
          mRestaurantAdapter.setNewData(restaurantList as MutableList<RestaurantVO>)
+     }
+
+     override fun showPopularChoicesFoodItems(popularChoiceList: List<FoodItemVO>) {
+         mPopularChoiceAdapter.setNewData(popularChoiceList as MutableList<FoodItemVO>)
      }
 
  }

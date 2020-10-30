@@ -36,6 +36,7 @@
                 android:textSize="18sp"/>
         </LinearLayout>
         <include layout="@layout/search_box_layout" />
+        <include layout="@layout/popular_choice_title_layout" android:id="@+id/ly_popular" android:visibility="gone"/>
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
