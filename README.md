@@ -1,1 +1,1 @@
-# food_delivery
+# Happy Food Delivery (Firebase with MVP)
