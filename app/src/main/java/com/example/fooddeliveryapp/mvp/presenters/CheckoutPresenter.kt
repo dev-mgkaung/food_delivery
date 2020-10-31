@@ -6,5 +6,5 @@ import com.example.fooddeliveryapp.mvp.views.CheckoutView
 import mk.padc.share.mvp.presenters.BasePresenter
 
 interface CheckoutPresenter : BasePresenter<CheckoutView>,CheckoutViewItemActionDelegate {
-fun removeAllCartItem(orderList: List<FoodItemVO>)
+fun onTapCheckout(orderList: List<FoodItemVO>)
 }

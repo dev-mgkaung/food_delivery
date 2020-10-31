@@ -13,7 +13,7 @@ class CheckoutPresenterImpl : CheckoutPresenter, AbstractBasePresenter<CheckoutV
 
     private val foodDeliveryModel : FoodDeliveryModel = FoodDeliveryModelImpl
 
-    override fun removeAllCartItem(orderList: List<FoodItemVO>) {
+    override fun onTapCheckout(orderList: List<FoodItemVO>) {
         for(order in orderList) {
             foodDeliveryModel.removeFoodItem(order.food_name.toString())
         }

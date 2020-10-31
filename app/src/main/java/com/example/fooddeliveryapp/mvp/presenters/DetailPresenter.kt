@@ -8,5 +8,5 @@ import mk.padc.share.mvp.presenters.BasePresenter
 
 interface DetailPresenter : BasePresenter<DetailView>, DetailViewItemActionDelegate,
     PopularChoiceDeatilViewItemActionDelegate {
-    fun onfetchReastaurantData(lifecycleOwner: LifecycleOwner, documentId : String)
+    fun onRestaurantRecieved(lifecycleOwner: LifecycleOwner, documentId : String)
 }

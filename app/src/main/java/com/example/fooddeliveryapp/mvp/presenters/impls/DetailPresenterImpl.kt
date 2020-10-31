@@ -37,7 +37,7 @@ class DetailPresenterImpl : DetailPresenter, AbstractBasePresenter<DetailView>()
                 })
     }
 
-    override fun onfetchReastaurantData(owner: LifecycleOwner, documentId: String) {
+    override fun onRestaurantRecieved(owner: LifecycleOwner, documentId: String) {
 
         foodDeliveryModel.getFoodItems(
             documentId,

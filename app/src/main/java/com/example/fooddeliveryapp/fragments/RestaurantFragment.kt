@@ -92,6 +92,7 @@ import mk.padc.share.activities.BaseFragment
         rc_category.visibility = View.VISIBLE
         ly_restaurant.visibility= View.GONE
         ly_popular.visibility =View.GONE
+        rc_popular_choice.visibility =View.GONE
         mRestaurantAdapter = RestaurantAdapter (mPresenter,0)
         rc_restaurants.adapter = mRestaurantAdapter
 
@@ -102,6 +103,7 @@ import mk.padc.share.activities.BaseFragment
         rc_category.visibility = View.GONE
         ly_restaurant.visibility= View.VISIBLE
         ly_popular.visibility =View.VISIBLE
+        rc_popular_choice.visibility =View.VISIBLE
         mRestaurantAdapter = RestaurantAdapter (mPresenter,1)
         rc_restaurants.adapter = mRestaurantAdapter
 
