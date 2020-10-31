@@ -3,6 +3,7 @@ package com.example.fooddeliveryapp.activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddeliveryapp.R
 import com.example.fooddeliveryapp.adapters.*
@@ -87,5 +88,16 @@ class DetailActivity : BaseActivity() , DetailView {
     override fun showFoodItemList(foodList: List<FoodItemVO>) {
         mDetailAdapter.setNewData(foodList as MutableList<FoodItemVO>)
     }
+
+    override fun showViewCartCount(cartCount: Long) {
+        if(cartCount>0)
+        {
+            btn_viewcart.visibility= View.VISIBLE
+            btn_viewcart.text="View Cart ${cartCount} items"
+        }else{
+            btn_viewcart.visibility= View.GONE
+        }
+    }
+
 
 }

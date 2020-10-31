@@ -13,7 +13,7 @@ class PopularDetailViewHolder(itemView: View, private val mDelegate: PopularChoi
     override fun bindData(data: FoodItemVO) {
         data?.let {
             itemView.tv_detail_popularchoice_name.text =data?.food_name
-            itemView.tv_detail_popularchoice_price.text =data?.food_price+"$"
+            itemView.tv_detail_popularchoice_price.text =data?.food_price.toString()+"$"
             data?.food_image?.let{
                 ImageUtils().showImageWithoutCrop(itemView.img_detail_popularchoice,it)
             }

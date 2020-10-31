@@ -40,12 +40,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <include layout="@layout/view_holder_restaurant_vertical_viewtype"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="19sp"
+                    android:text="Restaurant Info"/>
+                <include layout="@layout/view_holder_restaurant_vertical_viewtype"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="15dp"
                     android:textSize="19sp"
                     android:text="Order List"/>
                 <androidx.recyclerview.widget.RecyclerView
@@ -74,12 +87,12 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:textSize="14sp"
+                        android:textSize="18sp"
                         android:textStyle="bold"
-                        android:id="@+id/tv_totalamount"
+                        android:id="@+id/tv_total_Amount"
                         android:layout_alignParentRight="true"
                         android:gravity="center"
-                        android:textColor="@color/grey_400"
+                        android:textColor="@color/black"
                         android:text="10000 $"/>
 
                 </RelativeLayout>
@@ -87,6 +100,7 @@
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_gravity="center"
+                    android:layout_marginBottom="50dp"
                     android:gravity="center"
                     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
                     android:layout_height="40dp">

@@ -15,4 +15,6 @@ interface FirebaseApi {
     fun getOrderList(onSuccess: (restaurants: List<FoodItemVO>) -> Unit, onFialure: (String) -> Unit)
     fun addOrUpdateFoodItem(foodItemVO: FoodItemVO)
     fun deleteFoodItem(id: String)
+    fun getCartItemCount(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit)
+    fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit)
 }

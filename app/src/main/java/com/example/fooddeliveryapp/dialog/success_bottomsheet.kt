@@ -39,24 +39,3 @@ class BottomSheetFragment() : BottomSheetDialogFragment() {
     }
 }
 
-//
-//For BottomSheetDialog add below method in MainActivity.java .
-//
-//private fun showBottomSheetDialog() {
-//    val view = layoutInflater.inflate(R.layout.bottom_sheet_layout, null)
-//    val dialog = BottomSheetDialog(this)
-//    dialog.setContentView(view)
-//    view.textViewFacebook.setOnClickListener {
-//        Toast.makeText(this, "Facebook", Toast.LENGTH_SHORT).show()
-//    }
-//    view.textViewTwitter.setOnClickListener {
-//        Toast.makeText(this, "Twitter", Toast.LENGTH_SHORT).show()
-//    }
-//    view.textViewInstagram.setOnClickListener {
-//        Toast.makeText(this, "Instagram", Toast.LENGTH_SHORT).show()
-//    }
-//    view.textViewLinkedin.setOnClickListener {
-//        Toast.makeText(this, "Linkedin", Toast.LENGTH_SHORT).show()
-//    }
-//    dialog.show()
-//}

@@ -33,5 +33,10 @@ interface FoodDeliveryModel {
 
     fun addOrUpdateFoodItem(foodItemVO: FoodItemVO)
 
-    fun removeFoodItem(id: String)
+    fun removeFoodItem(name: String)
+
+    fun getCartItemCount(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit)
+
+    fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit)
+
 }

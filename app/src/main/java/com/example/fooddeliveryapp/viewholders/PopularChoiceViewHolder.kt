@@ -13,6 +13,7 @@ class PopularChoiceViewHolder(itemView: View, private val mDelegate: PopularView
 
     override fun bindData(data: FoodItemVO) {
         data?.let {
+            itemView.tv_restaurant_name.text =data.food_name
             itemView.tv_food_description.text =data.food_description
             itemView.tv_food_rating.text =data.food_rating
             data?.food_image?.let{

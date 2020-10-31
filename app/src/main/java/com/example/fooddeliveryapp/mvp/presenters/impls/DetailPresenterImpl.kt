@@ -12,9 +12,29 @@ class DetailPresenterImpl : DetailPresenter, AbstractBasePresenter<DetailView>()
 
     private val foodDeliveryModel : FoodDeliveryModel = FoodDeliveryModelImpl
 
-    override fun onUiReady(owner: LifecycleOwner) {}
+    override fun onUiReady(owner: LifecycleOwner) {
+        foodDeliveryModel.getCartItemCount(
+                onSuccess = {
+                    mView?.showViewCartCount(it)
+                },
+                onFialure = {
+                    mView?.showError(it)
+                })
+    }
+
     override fun onTapAddToCartAction(data: FoodItemVO) {
 
+        var totalAmount= data.itemCount * data.food_price
+        data.totalAmount= totalAmount
+        foodDeliveryModel.addOrUpdateFoodItem(data)
+
+        foodDeliveryModel.getCartItemCount(
+                onSuccess = {
+               mView?.showViewCartCount(it)
+                },
+                onFialure = {
+                    mView?.showError(it)
+                })
     }
 
     override fun onfetchReastaurantData(owner: LifecycleOwner, documentId: String) {
@@ -25,7 +45,7 @@ class DetailPresenterImpl : DetailPresenter, AbstractBasePresenter<DetailView>()
                 dataList, restaurant ->
                 mView.showPopularChoicesFoodItem(
                     dataList.filter{
-                        data -> data.popular == "1"
+                        data -> data.popular
                     }
                 )
                 mView.showRestaurantData(restaurant)

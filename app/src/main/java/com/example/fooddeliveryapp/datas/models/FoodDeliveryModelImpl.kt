@@ -66,6 +66,14 @@ object FoodDeliveryModelImpl : FoodDeliveryModel {
         mFirebaseApi.addOrUpdateFoodItem(foodItemVO)
     }
 
+    override fun getCartItemCount(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit) {
+        mFirebaseApi.getCartItemCount(onSuccess,onFialure)
+    }
+
+    override fun getTotalPrice(onSuccess: (cartCount: Long) -> Unit, onFialure: (String) -> Unit) {
+        mFirebaseApi.getTotalPrice(onSuccess,onFialure)
+    }
+
     override fun removeFoodItem(id: String) {
         mFirebaseApi.deleteFoodItem(id)
     }
