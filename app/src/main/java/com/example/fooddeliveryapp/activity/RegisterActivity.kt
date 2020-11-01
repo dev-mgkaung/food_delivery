@@ -31,7 +31,7 @@ class RegisterActivity : BaseActivity() , RegisterView {
 
     private fun setUpActionListeners() {
         btnRegister.setOnClickListener {
-            mPresenter.onTapRegister(
+            mPresenter.onTapRegister(this,
                 etUserName.text.toString(),
                 etEmail.text.toString(),
                 etPassword.text.toString(),
@@ -42,7 +42,7 @@ class RegisterActivity : BaseActivity() , RegisterView {
 
     private fun setUpPresenter() {
         mPresenter = getPresenter<RegisterPresenterImpl, RegisterView>()
-        mPresenter.onUiReady(this)
+        mPresenter.onUiReady(this,this)
     }
 
     override fun navigateToToLoginScreen() {

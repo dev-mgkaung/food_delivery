@@ -12,7 +12,6 @@ import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.example.fooddeliveryapp.R
 import com.example.fooddeliveryapp.datas.vos.UserVO
@@ -65,7 +64,7 @@ class AccountFragment : BaseFragment() ,ProfileView{
     private fun setUpPresenter() {
         activity?.let{
             mPresenter = getPresenter<ProfilePresenterImpl, ProfileView>()
-            mPresenter.onUiReady(this)
+            context?.let { it1 -> mPresenter.onUiReady(it1,this) }
         }
     }
 

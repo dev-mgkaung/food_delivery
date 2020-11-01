@@ -26,7 +26,7 @@ class IntroActivity : BaseActivity() , IntroView {
     }
     private fun setUpPresenter() {
         mPresenter = getPresenter<IntroPresenterImpl, IntroView>()
-        mPresenter.onUiReady(this)
+        mPresenter.onUiReady(this,this)
     }
     override fun navigateToLoginScreen() {
         startActivity(LoginActivity.newIntent(this))

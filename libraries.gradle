@@ -58,6 +58,7 @@ ext {
             swiperefreshlayout      : "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayoutVersion",
             livedata                : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
             lifecycle_compiler      : "androidx.lifecycle:lifecycle-compiler:$lifecycle_version",
+            lifecycle_viewModel     : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
             livecycle_arch_compiler : "android.arch.lifecycle:compiler:$lifecycle_version",
             lifecycle_arch_extension: "android.arch.lifecycle:extensions:$lifecycle_version",
             room                    : "androidx.room:room-runtime:$room_version",
@@ -83,6 +84,8 @@ ext {
             firebaseFirestoreKtx    : "com.google.firebase:firebase-firestore-ktx",
             firebaseConfigKtx       : "com.google.firebase:firebase-config-ktx",
             firebaseStorageKtx      : "com.google.firebase:firebase-storage-ktx",
-
+            firebaseInAppMessageKtx : "com.google.firebase:firebase-inappmessaging-display-ktx",
+            firebaseMessageKtx      : "com.google.firebase:firebase-messaging-ktx",
+            firebaseCrashlyticsKtx  : "com.google.firebase:firebase-crashlytics"
     ]
 }

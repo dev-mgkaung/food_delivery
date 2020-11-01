@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -85,9 +86,8 @@ dependencies {
     implementation rootProject.ext.libraries.lifecycle_arch_extension
     kapt rootProject.ext.libraries.lifecycle_compiler
     implementation rootProject.ext.libraries.lifecycle_extensions
-//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-//    implementation 'androidx.annotation:annotation:1.1.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation rootProject.ext.libraries.lifecycle_viewModel
+
     // Room Database
     implementation rootProject.ext.libraries.room
     kapt rootProject.ext.libraries.roomcompiler
@@ -126,4 +126,8 @@ dependencies {
     implementation rootProject.ext.libraries.firebaseFirestoreKtx
     implementation rootProject.ext.libraries.firebaseConfigKtx
     implementation rootProject.ext.libraries.firebaseStorageKtx
+    implementation rootProject.ext.libraries.firebaseInAppMessageKtx
+    implementation rootProject.ext.libraries.firebaseCrashlyticsKtx
+    implementation rootProject.ext.libraries.firebaseMessageKtx
+
 }

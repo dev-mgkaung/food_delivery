@@ -39,4 +39,10 @@ dependencies {
     //Glide
     implementation rootProject.ext.libraries.glide
     annotationProcessor rootProject.ext.libraries.glideAnnotion
+
+    // Import the BoM for the Firebase platform
+    implementation platform(rootProject.ext.libraries.firebaseBom)
+    implementation rootProject.ext.libraries.firebaseAuthKtx
+    implementation rootProject.ext.libraries.firebaseAnalytics
+
 }

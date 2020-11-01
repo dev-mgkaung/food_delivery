@@ -29,7 +29,7 @@ class LoginActivity : BaseActivity() , LoginView {
 
     private fun setUpActionListeners() {
         btnLogin.setOnClickListener {
-            mPresenter.onTapLogin(ed_email.text.toString(), ed_password.text.toString())
+            mPresenter.onTapLogin(this,ed_email.text.toString(), ed_password.text.toString())
         }
 
         btnRegister.setOnClickListener {
@@ -39,7 +39,7 @@ class LoginActivity : BaseActivity() , LoginView {
 
     private fun setUpPresenter() {
         mPresenter = getPresenter<LoginPresenterImpl, LoginView>()
-        mPresenter.onUiReady(this)
+        mPresenter.onUiReady(this,this)
     }
 
     override fun navigateToHomeScreen() {

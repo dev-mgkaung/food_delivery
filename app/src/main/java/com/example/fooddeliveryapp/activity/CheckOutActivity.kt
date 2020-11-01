@@ -88,7 +88,7 @@ class CheckOutActivity : BaseActivity(), CheckoutView {
 
                 Toast.makeText(this, "Order Track Clicked", Toast.LENGTH_SHORT).show()
                 dialog?.dismiss()
-                mPresenter.removeAllCartItem(orderList = mOrderList)
+                mPresenter.onTapCheckout(this,orderList = mOrderList)
                 exitActivity()
 
         }
@@ -115,7 +115,7 @@ class CheckOutActivity : BaseActivity(), CheckoutView {
 
     private fun setUpPresenter() {
         mPresenter = getPresenter<CheckoutPresenterImpl, CheckoutView>()
-        mPresenter.onUiReady(this)
+        mPresenter.onUiReady(this,this)
 
     }
 

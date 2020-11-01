@@ -23,6 +23,7 @@ class DetailActivity : BaseActivity() , DetailView {
     private lateinit var mDetailAdapter: DetailAdapter
     private lateinit var mPopularChoiceDetailAdapter: PopularChoiceDetailAdapter
     private lateinit var mRestaurantVO: RestaurantVO
+
     companion object {
         const val PARM_DOCUMENTID = "Document ID"
         fun newIntent(context: Context,
@@ -66,8 +67,8 @@ class DetailActivity : BaseActivity() , DetailView {
 
     private fun setUpPresenter() {
             mPresenter = getPresenter<DetailPresenterImpl, DetailView>()
-            mPresenter.onUiReady(this)
-            mPresenter.onfetchReastaurantData(this,intent.getStringExtra(PARM_DOCUMENTID).toString())
+            mPresenter.onUiReady(this,this)
+            mPresenter.onRestaurantRecieved(this,this,intent.getStringExtra(PARM_DOCUMENTID).toString())
     }
 
 

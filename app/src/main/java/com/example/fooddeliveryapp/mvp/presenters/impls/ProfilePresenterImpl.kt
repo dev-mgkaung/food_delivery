@@ -1,5 +1,8 @@
+import android.content.Context
 import android.graphics.Bitmap
 import androidx.lifecycle.LifecycleOwner
+import com.example.fooddeliveryapp.analytics.SCREEN_PROFILE
+import com.example.fooddeliveryapp.analytics.SCREEN_REGISTER
 import com.example.fooddeliveryapp.datas.models.AuthenticationModel
 import com.example.fooddeliveryapp.datas.models.AuthenticationModelImpl
 import com.example.fooddeliveryapp.datas.models.FoodDeliveryModel
@@ -34,7 +37,8 @@ class ProfilePresenterImpl : ProfilePresenter, AbstractBasePresenter<ProfileView
         mView?.onTapEditProfileImage()
     }
 
-    override fun onUiReady(owner: LifecycleOwner) {
+    override fun onUiReady(context: Context, owner: LifecycleOwner) {
+        sendEventsToFirebaseAnalytics(context, SCREEN_PROFILE)
         mAuthenticationModel?.userData(
                 onSuccess = {
                     mView?.displayUserData(it)

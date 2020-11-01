@@ -1,6 +1,5 @@
 package com.example.fooddeliveryapp.fragments
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -63,7 +62,7 @@ import mk.padc.share.activities.BaseFragment
     private fun setUpPresenter() {
         activity?.let{
             mPresenter = getPresenter<MainPresenterImpl, MainView>()
-            mPresenter.onUiReady(this)
+            context?.let { it1 -> mPresenter.onUiReady(it1,this) }
         }
     }
 

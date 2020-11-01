@@ -1,6 +1,9 @@
 package com.example.fooddeliveryapp.mvp.presenters.impls
 
+import android.content.Context
 import androidx.lifecycle.LifecycleOwner
+import com.example.fooddeliveryapp.analytics.SCREEN_LOGIN
+import com.example.fooddeliveryapp.analytics.SCREEN_REGISTER
 import com.example.fooddeliveryapp.datas.models.FoodDeliveryModel
 import com.example.fooddeliveryapp.datas.models.FoodDeliveryModelImpl
 import com.example.fooddeliveryapp.datas.vos.FoodItemVO
@@ -13,13 +16,15 @@ class CheckoutPresenterImpl : CheckoutPresenter, AbstractBasePresenter<CheckoutV
 
     private val foodDeliveryModel : FoodDeliveryModel = FoodDeliveryModelImpl
 
-    override fun onTapCheckout(orderList: List<FoodItemVO>) {
+    override fun onTapCheckout(context: Context,orderList: List<FoodItemVO>) {
+        sendEventsToFirebaseAnalytics(context, SCREEN_REGISTER)
         for(order in orderList) {
             foodDeliveryModel.removeFoodItem(order.food_name.toString())
         }
     }
 
-    override fun onUiReady(owner: LifecycleOwner) {
+    override fun onUiReady(context: Context, owner: LifecycleOwner) {
+        sendEventsToFirebaseAnalytics(context, SCREEN_REGISTER)
         foodDeliveryModel.getOrderList(
                 onSuccess = {
                     mView.showOrderList(it)

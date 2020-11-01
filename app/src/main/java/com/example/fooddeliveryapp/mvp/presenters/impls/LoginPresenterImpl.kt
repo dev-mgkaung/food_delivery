@@ -1,7 +1,10 @@
 package com.example.fooddeliveryapp.mvp.presenters.impls
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LifecycleOwner
+import com.example.fooddeliveryapp.analytics.SCREEN_LOGIN
+import com.example.fooddeliveryapp.analytics.TAP_LOGIN
 import com.example.fooddeliveryapp.datas.models.AuthenticationModel
 import com.example.fooddeliveryapp.datas.models.AuthenticationModelImpl
 import com.example.fooddeliveryapp.datas.models.FoodDeliveryModel
@@ -17,13 +20,14 @@ class LoginPresenterImpl : LoginPresenter, AbstractBasePresenter<LoginView>() {
 
     private  val mFoodDeliveryModel : FoodDeliveryModel =FoodDeliveryModelImpl
 
-    override fun onUiReady(owner: LifecycleOwner) {
-        Log.e("Firebase","login ui ready")
+    override fun onUiReady(context: Context, owner: LifecycleOwner) {
+        sendEventsToFirebaseAnalytics(context, SCREEN_LOGIN)
         mFoodDeliveryModel.setUpRemoteConfigWithDefaultValues()
         mFoodDeliveryModel.fetchRemoteConfigs()
     }
 
-    override fun onTapLogin(email: String, password: String) {
+    override fun onTapLogin(context: Context,email: String, password: String) {
+        sendEventsToFirebaseAnalytics(context, TAP_LOGIN)
         mAuthenticatioModel.login(email, password, onSuccess = {
             mView.navigateToHomeScreen()
         }, onFailure = {
