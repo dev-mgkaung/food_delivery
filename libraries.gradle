@@ -86,6 +86,8 @@ ext {
             firebaseStorageKtx      : "com.google.firebase:firebase-storage-ktx",
             firebaseInAppMessageKtx : "com.google.firebase:firebase-inappmessaging-display-ktx",
             firebaseMessageKtx      : "com.google.firebase:firebase-messaging-ktx",
-            firebaseCrashlyticsKtx  : "com.google.firebase:firebase-crashlytics"
+            firebaseCrashlyticsKtx  : "com.google.firebase:firebase-crashlytics",
+            firebaseDeepLinkKtx     : "com.google.firebase:firebase-dynamic-links-ktx",
+            firebaseInstallationKtx : "com.google.firebase.installations.ktx"
     ]
 }

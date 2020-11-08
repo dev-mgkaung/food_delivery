@@ -18,12 +18,17 @@ class RegisterPresenterImpl : RegisterPresenter, AbstractBasePresenter<RegisterV
     private val mAuthenticationModel: AuthenticationModel = AuthenticationModelImpl
 
     override fun onTapRegister(context: Context,username: String, email: String, password: String, phone : String) {
-        sendEventsToFirebaseAnalytics(context, TAP_REGISTER)
-        mAuthenticationModel.register(username, email, password,phone, onSuccess = {
-            mView.navigateToToLoginScreen()
-        }, onFailure = {
-            mView.showError(it)
-        })
+        if(email.isEmpty() || password.isEmpty() || username.isEmpty()){
+            mView.showError("Please enter all fields")
+        } else {
+
+            sendEventsToFirebaseAnalytics(context, TAP_REGISTER)
+            mAuthenticationModel.register(username, email, password, phone, onSuccess = {
+                mView.navigateToToLoginScreen()
+            }, onFailure = {
+                mView.showError(it)
+            })
+        }
     }
 
     override fun navigateToLoginScreen() {
