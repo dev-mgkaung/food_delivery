@@ -129,5 +129,6 @@ dependencies {
     implementation rootProject.ext.libraries.firebaseInAppMessageKtx
     implementation rootProject.ext.libraries.firebaseCrashlyticsKtx
     implementation rootProject.ext.libraries.firebaseMessageKtx
+    implementation rootProject.ext.libraries.firebaseDeepLinkKtx
 
 }

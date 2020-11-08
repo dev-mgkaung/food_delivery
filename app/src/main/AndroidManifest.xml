@@ -19,7 +19,17 @@
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.FoodDelivery.NoActionBar" />
+            android:theme="@style/Theme.FoodDelivery.NoActionBar" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:host="padc.com.mm" android:scheme="https"/>
+                <data android:host="padc.com.mm" android:scheme="http"/>
+            </intent-filter>
+
+        </activity>
         <activity android:name=".activity.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

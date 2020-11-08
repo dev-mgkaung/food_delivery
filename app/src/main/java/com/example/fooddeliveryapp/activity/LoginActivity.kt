@@ -34,14 +34,14 @@ class LoginActivity : BaseActivity() , LoginView {
             Log.d("fbToken", it.token)
         }
 
-//        FirebaseInstallations.getInstance().getToken(/* forceRefresh */ true)
-//            .addOnCompleteListener { task ->
-//                if (task.isSuccessful) {
-//                    Log.d("Installations", "Installation auth token: " + task.result?.token)
-//                } else {
-//                    Log.e("Installations", "Unable to get Installation auth token")
-//                }
-//            }
+        FirebaseInstallations.getInstance().getToken(/* forceRefresh */ false)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Log.d("Installations", "Installation auth token: " + task.result?.token)
+                } else {
+                    Log.e("Installations", "Unable to get Installation auth token")
+                }
+            }
     }
 
     private fun setUpActionListeners() {

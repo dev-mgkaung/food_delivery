@@ -88,6 +88,6 @@ ext {
             firebaseMessageKtx      : "com.google.firebase:firebase-messaging-ktx",
             firebaseCrashlyticsKtx  : "com.google.firebase:firebase-crashlytics",
             firebaseDeepLinkKtx     : "com.google.firebase:firebase-dynamic-links-ktx",
-            firebaseInstallationKtx : "com.google.firebase.installations.ktx"
+
     ]
 }
